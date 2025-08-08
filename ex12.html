@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevOps Lifecycle for Web Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+
+    .section {
+      background: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }S
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    code {
+      background: #eee;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DevOps Lifecycle for Web Application Project</h1>
+
+  <div class="section">
+    <h2>1. Plan</h2>
+    <ul>
+      <li>Tools: Jira, Trello, Azure Boards, GitHub Projects</li>
+      <li>Activities: Requirement gathering, Sprint planning, Task tracking</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. Develop</h2>
+    <ul>
+      <li>Tools: Git, GitHub, VS Code, IntelliJ</li>
+      <li>Activities: Code writing, Branching, Code review, Unit testing</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. Build</h2>
+    <ul>
+      <li>Tools: Maven, Gradle, npm, Docker</li>
+      <li>Activities: Build creation, Dependency packaging, Dockerization</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Test</h2>
+    <ul>
+      <li>Tools: Selenium, JUnit, Cypress, Postman</li>
+      <li>Activities: Automated tests, Code quality checks</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. Release</h2>
+    <ul>
+      <li>Tools: Jenkins, GitHub Actions, GitLab CI</li>
+      <li>Activities: CI/CD pipeline, Test environment deployment</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Deploy</h2>
+    <ul>
+      <li>Tools: Kubernetes, Docker Swarm, AWS ECS</li>
+      <li>Activities: Production deployment, Blue-green/canary deployment</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Operate</h2>
+    <ul>
+      <li>Tools: Prometheus, Grafana, ELK Stack</li>
+      <li>Activities: Monitoring, Logs, Alerts</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>8. Monitor / Feedback</h2>
+    <ul>
+      <li>Tools: Slack, Sentry, New Relic</li>
+      <li>Activities: Error tracking, User feedback, Iteration planning</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Toolchain Overview</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Tools Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Plan</td><td>Jira, GitHub Projects</td></tr>
+        <tr><td>Develop</td><td>Git, VS Code, GitHub</td></tr>
+        <tr><td>Build</td><td>Docker, npm, Webpack</td></tr>
+        <tr><td>Test</td><td>Jest, Cypress, Postman</td></tr>
+        <tr><td>Release</td><td>GitHub Actions</td></tr>
+        <tr><td>Deploy</td><td>AWS ECS, Kubernetes</td></tr>
+        <tr><td>Operate</td><td>Prometheus, Grafana</td></tr>
+        <tr><td>Monitor</td><td>Sentry, Slack</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Sample CI/CD Pipeline (GitHub Actions)</h2>
+    <pre><code>name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to production
+      run: echo "Deploying to production..."
+</code></pre>
+  </div>
+
+</body>
+</html>
